@@ -1,0 +1,47 @@
+//fixes this being above the header and navbar
+.sign-in {
+    grid-row: content-s/content-e;
+    grid-column: s/e;
+
+    &__form {
+        display: grid;
+        //allows for you to be more accurate with your grid spacing
+        grid-template-rows: [email-s] 64px [email-e password-s] 64px [password-e] minmax(20px, 289px) [line-s] 2px [line-e login-s] 38px [login-e];
+    }
+}
+
+.sign-in-form {
+    & > * {
+        grid-column: 1/-1;
+    }
+
+    &__email {
+        //where it starts and ends
+        grid-row: email-s/email-e;
+    }
+
+    &__password {
+        margin-top: 15px;
+        grid-row: password-s/password-e;
+    }
+
+    &__line {
+        grid-row: line-s/line-e;
+        border-top: 1px solid #ccc;
+        //extends the line accross the whole page
+        grid-column: 1/-1;
+    }
+
+    &__login {
+        // can add the margin here so the btn can remain universal and
+        // I can call on the specific class names here
+        margin-top: 39px;
+        grid-row: login-s/login-e;
+    }
+
+    &__details {
+        grid-row: 1/-1;
+        justify-self: end;
+        align-self: start;
+    }
+}
