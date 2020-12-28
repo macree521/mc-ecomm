@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
 class Purchases extends Component {
-    //access to this function by using connect and importing our actions
     componentDidMount() {
         this.props.fetchUserPurchases();
     }
@@ -16,7 +15,11 @@ class Purchases extends Component {
             <div className={`${className} purchases`}>
                 {
                     this.props.purchases.map(purchase => {
-                        return <div>{purchase.title}</div>
+                        return (
+                            <div key={purchase._id} className="purchases__purchase purchase">
+                                <img className="purchase__img" src='http://via.placeholder.com/80x80' />
+                            </div>
+                        )
                     })
                 }
             </div>
