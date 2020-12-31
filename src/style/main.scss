@@ -19,6 +19,7 @@ body {
 
 @import "./layout.scss";
 @import "./headernavbar.scss";
+
 @import "./auth/signin.scss";
 @import "./auth/signup.scss";
 
@@ -29,3 +30,5 @@ body {
 @import "./account/purchase-history.scss";
 @import "./account/account-info.scss";
 @import "./account/account.scss";
+
+@import "./shop/shop.scss";
