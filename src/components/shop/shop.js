@@ -30,19 +30,33 @@ class Shop extends Component {
     render() {
         return (
         <div className="shop">
-            {/* shop searchbar 
-            shop product component - goign to simulate pulling from the back end
-            cart button */}
+            <div className="shop__products">
+                {
+                    this.props.filteredProducts.map(product => {
+                        return (
+                            <div key={product._id} className="shop-product">
+                                <div className="shop-product__title">
+                                    {product.title}
+                                </div>
+                                <div className="shop-product__description">
+                                    {product.description}
+                                </div>
+                            </div>
+                        )
+                    })
+                }
+
+            </div>
         </div>
         );
     }
 }
 
 function mapStateToProps(state) {
-    //pulling categories out of shop
-    const { categories } = state.shop
+    const { categories, filteredProducts } = state.shop
     return {
-        categories
+        categories,
+        filteredProducts
     }
 }
 
