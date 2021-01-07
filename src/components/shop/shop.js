@@ -7,6 +7,13 @@ import ShopProduct from './shopProduct';
 import ShopCart from './shopCart';
 
 class Shop extends Component {
+    constructor() {
+        super()
+
+        this.state = {
+            showCart: true
+        }
+    }
 
     componentDidMount() {
         const headerLinks = [
@@ -20,7 +27,6 @@ class Shop extends Component {
         this.props.setHeaderLinks(headerLinks);
         this.props.fetchShopCategories();
         this.props.fetchShopProducts();
-            //filter products with links
     }
 
     shouldComponentUpdate(nextProps) {
@@ -31,7 +37,6 @@ class Shop extends Component {
     }
 
     onSubmit = (fields) => {
-        console.log(fields);
         this.props.filterProductsWithQuery(fields)
     }
 
@@ -48,6 +53,9 @@ class Shop extends Component {
                     })
                 }
             </div>
+            {
+                this.state.showCart ? <ShopCart className='shop__cart'/> : ''
+            }
         </div>
         );
     }
