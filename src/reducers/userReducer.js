@@ -4,7 +4,6 @@ import {
     SET_CART_PRODUCTS,
     ADD_CART_PRODUCT
 } from '../actions/types';
-import CartProduct from '../components/shop/cartProduct';
 
 const INITIAL_STATE = {
     cartProducts: [],
