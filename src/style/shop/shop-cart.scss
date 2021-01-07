@@ -50,12 +50,13 @@
         font-size: 30px;
         font-family: 'Titillium Web';
         color: #E6E6E6;
-        margin-bottom: 50px;
     }
     &__products {
+        padding-top: 50px;
         grid-column: s/e;
         grid-row: products-s/products-e;
         display: grid;
+        overflow-y: scroll;
     }
     &__footer {
         grid-column: footer-s/footer-e;
