@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-
 import { reduxForm, Field } from 'redux-form';
-import { FormButton } from '../formFields';
 
 import history from '../../history';
+
+import { FormButton } from '../formFields';
+import ReviewProducts from './reviewProducts';
 
 class ReviewForm extends Component {
   render() {
@@ -11,21 +12,23 @@ class ReviewForm extends Component {
 
     return (
       <form onSubmit={handleSubmit} className={`${className} review-form`}>
-          <div className='review-form__line'></div>
-          <Field className='review-form__proceed' 
-          onClick={() => history.push('/signin')}
-          type='submit' 
-          title='Proceed To Checkout'  
-          name='proceed' 
-          component={FormButton}/>
+        <ReviewProducts className='review-form__products' />
+        
+        <div className='review-form__line'></div>
+        <Field className='review-form__proceed' 
+        onClick={() => history.push('/signin')}
+        type='submit' 
+        title='Proceed To Checkout'  
+        name='proceed' 
+        component={FormButton}/>
 
-          <Field className='review-form__back' 
-          onClick={() => history.push('/shop')}
-          type='button' 
-          title='Back'  
-          name='back' 
-          short = {true}
-          component={FormButton}/>
+        <Field className='review-form__back' 
+        onClick={() => history.push('/shop')}
+        type='button' 
+        title='Back'  
+        name='back' 
+        short = {true}
+        component={FormButton}/>
       </form>
     );
   }
