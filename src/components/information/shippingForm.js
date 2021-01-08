@@ -18,7 +18,7 @@ class ShippingForm extends Component {
           name='name' 
           component={FormInput}/>
 
-          <Field className='shipping-form__street-address' 
+          <Field className='shipping-form__address' 
           type='address' 
           title='Street Address' 
           placeholder='Street Address' 
