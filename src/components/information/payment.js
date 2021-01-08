@@ -21,7 +21,7 @@ class Payment extends Component {
     return (
       <div className="sign-in">
         <PageTitle className='sign-in__page-title' title='Payment Info' />
-        <PaymentForm onSubmit={this.onSubmit} className='sign-in__form' />
+        <PaymentForm onSubmit={this.onSubmit} className='payment__form' />
       </div>
     );
   }
